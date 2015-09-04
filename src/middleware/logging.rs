@@ -1,16 +1,17 @@
 use iron::AfterMiddleware;
 use iron::prelude::*;
-use middleware::timing::ResponseTime;
 use time::now_utc;
 
-pub struct LoggingMiddleware;
+use middleware::timing::Timing;
 
-impl AfterMiddleware for LoggingMiddleware {
+pub struct Logging;
+
+impl AfterMiddleware for Logging {
     fn after(&self, req: &mut Request, res: Response) -> IronResult<Response> {
         // let uri: String = req.url.path.iter().fold("".to_string(), |s, item| s + "/" + item);
         // let uri: String = req.url.path;
         let timestamp = now_utc();
-        let t: u64 = *req.extensions.get::<ResponseTime>().unwrap();
+        let t: u64 = *req.extensions.get::<Timing>().unwrap();
         info!("{} - {} - {} - {} - {}ms - {}",
               timestamp.rfc3339(),
               req.method,
