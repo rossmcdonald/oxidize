@@ -1,0 +1,23 @@
+[package]
+name = "oxidize"
+version = "0.1.0"
+description = "A simple web application built in Rust on Iron and Hyper."
+readme = "README.md"
+license = "MIT"
+authors = ["Ross McDonald <mcdonaldrossc@gmail.com>"]
+
+[dependencies]
+# cookie = "*"
+iron = "*"
+router = "*"
+time = "*"
+# maud = "*"
+# maud_macros = "*"
+log = "0.3"
+env_logger = "0.3"
+
+[dependencies.bodyparser]
+git = "https://github.com/iron/body-parser.git"
+
+[dependencies.persistent]
+git = "https://github.com/iron/persistent.git"
