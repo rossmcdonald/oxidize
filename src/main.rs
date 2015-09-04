@@ -10,10 +10,6 @@ extern crate env_logger;
 extern crate time;
 
 use iron::prelude::*;
-use iron::mime::Mime;
-use iron::method::Method::*;
-use iron::headers::*;
-use iron::status;
 use router::{Router};
 
 use persistent::Read;
