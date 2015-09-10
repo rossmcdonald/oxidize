@@ -1,3 +1,8 @@
+#![feature(plugin)]
+#![plugin(maud_macros)]
+#[macro_use]
+extern crate maud;
+
 extern crate iron;
 extern crate router;
 extern crate bodyparser;

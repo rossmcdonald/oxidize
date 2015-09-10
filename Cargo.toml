@@ -11,8 +11,8 @@ authors = ["Ross McDonald <mcdonaldrossc@gmail.com>"]
 iron = "*"
 router = "*"
 time = "*"
-# maud = "*"
-# maud_macros = "*"
+maud = "*"
+maud_macros = "*"
 log = "0.3"
 env_logger = "0.3"
 

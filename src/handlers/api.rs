@@ -16,9 +16,17 @@ pub fn api(req: &mut Request) -> IronResult<Response> {
             
             let user_agent = req.headers.get::<UserAgent>().unwrap();
             // TODO Perform some simple vetting of user-agent to discern browser v programmatic/API access
-            let content_type = "text/plain".parse::<Mime>().unwrap();
+            // let content_type = "text/plain".parse::<Mime>().unwrap();
+            let content_type = "text/html".parse::<Mime>().unwrap();
             
-            let response_body: String = format!("Hello!\n\nObject ID: \'{}\'", obj_id);
+            // let response_body: String = format!("Hello!\n\nObject ID: \'{}\'", obj_id);
+            let mut response_body: String = String::new();
+            html!(response_body, {
+                html {
+                    h1 "Welcome!"
+                    p { "You have reached API endpoint for object: " $obj_id }
+                }
+            });
             Ok(Response::with((content_type, status::Ok, response_body)))
         },
         Put => {
