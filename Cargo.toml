@@ -7,7 +7,6 @@ license = "MIT"
 authors = ["Ross McDonald <mcdonaldrossc@gmail.com>"]
 
 [dependencies]
-# cookie = "*"
 iron = "*"
 router = "*"
 time = "*"
@@ -15,6 +14,7 @@ maud = "*"
 maud_macros = "*"
 log = "0.3"
 env_logger = "0.3"
+postgres = "0.9"
 
 [dependencies.bodyparser]
 git = "https://github.com/iron/body-parser.git"

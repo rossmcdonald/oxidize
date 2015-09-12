@@ -33,7 +33,7 @@ fn generate_router() -> Router {
     r.get("/api/:obj_id", handlers::api);
     r.post("/api", handlers::api);
     r.put("/api/:obj_id", handlers::api);
-    r.delete("/api/:obj_id", handlers::api);    
+    r.delete("/api/:obj_id", handlers::api);
     r
 }
 
